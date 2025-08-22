@@ -1,9 +1,45 @@
 import { useState } from "react"
 import AddBusinessForm from "../Components/AddUrBusinessForm" ;
+import ConnectPopup from "../Components/ConnectPopup";
+import BusinessDetailsPopup from "../Components/BusinessDetailsPopup";
 
 
 export default function BusinessConnect() {
   const [showForm, setShowForm] = useState(false)
+  const [showConnectPopup, setShowConnectPopup] = useState(false);
+  const [showDetailsPopup, setShowDetailsPopup] = useState(false);
+  const [selectedBusiness, setSelectedBusiness] = useState(null);
+
+
+  const businesses = [
+    {
+      name: "TechFlow Solutions",
+      description: "Innovative software solutions for modern businesses",
+      products: ["/modern-tech-startup-office.png"],
+      website: "https://techflow.com",
+      owner: "John Doe",
+      location: "Pune, India",
+      tag: "Technology",
+    },
+    {
+      name: "Artisan Coffee Co.",
+      description: "Premium coffee and cozy workspace for professionals",
+      products: ["/artisan-coffee-shop.png"],
+      website: "https://artisancoffee.com",
+      owner: "Jane Smith",
+      location: "Mumbai, India",
+      tag: "Food & Beverage",
+    },
+    {
+      name: "FitLife Wellness",
+      description: "Complete fitness and wellness solutions for healthy living",
+      products: ["/modern-gym-equipment.png"],
+      website: "https://fitlifewellness.com",
+      owner: "Mike Johnson",
+      location: "Bangalore, India",
+      tag: "Healthcare",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -32,53 +68,44 @@ export default function BusinessConnect() {
           </div>
         </div>
 
-        {/* Sample Business Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white border rounded-lg p-6 shadow-sm">
-            <img
-              src="/modern-tech-startup-office.png"
-              alt="Tech Startup"
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            <h3 className="font-semibold text-lg mb-2">TechFlow Solutions</h3>
-            <p className="text-gray-500 text-sm mb-3">Innovative software solutions for modern businesses</p>
-            <div className="flex items-center justify-between">
-              <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Technology</span>
-              <button className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-100 transition">Connect</button>
+          {businesses.map((biz, index) => (
+            <div
+              key={index}
+              className="bg-white border rounded-lg p-6 shadow-sm cursor-pointer"
+              onClick={() => {
+                setSelectedBusiness(biz);
+                setShowDetailsPopup(true);
+              }}
+            >
+              <img
+                src={biz.products[0]}
+                alt={biz.name}
+                className="w-full h-40 object-cover rounded-lg mb-4"
+              />
+              <h3 className="font-semibold text-lg mb-2">{biz.name}</h3>
+              <p className="text-gray-500 text-sm mb-3">{biz.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">{biz.tag}</span>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation(); // prevent triggering details popup
+                    setSelectedBusiness(biz);
+                    setShowConnectPopup(true);
+                  }}
+                  className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-100 transition"
+                >
+                  Connect
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div className="bg-white border rounded-lg p-6 shadow-sm">
-            <img
-              src="/artisan-coffee-shop.png"
-              alt="Coffee Shop"
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            <h3 className="font-semibold text-lg mb-2">Artisan Coffee Co.</h3>
-            <p className="text-gray-500 text-sm mb-3">Premium coffee and cozy workspace for professionals</p>
-            <div className="flex items-center justify-between">
-              <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Food & Beverage</span>
-              <button className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-100 transition">Connect</button>
-            </div>
-          </div>
-
-          <div className="bg-white border rounded-lg p-6 shadow-sm">
-            <img
-              src="/modern-gym-equipment.png"
-              alt="Fitness Center"
-              className="w-full h-40 object-cover rounded-lg mb-4"
-            />
-            <h3 className="font-semibold text-lg mb-2">FitLife Wellness</h3>
-            <p className="text-gray-500 text-sm mb-3">Complete fitness and wellness solutions for healthy living</p>
-            <div className="flex items-center justify-between">
-              <span className="text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">Healthcare</span>
-              <button className="px-3 py-1 border border-gray-300 rounded text-sm hover:bg-gray-100 transition">Connect</button>
-            </div>
-          </div>
+          ))}
         </div>
       </main>
 
       {showForm && <AddBusinessForm onClose={() => setShowForm(false)} />}
+      {showConnectPopup && <ConnectPopup isOpen={showConnectPopup} onClose={() => setShowConnectPopup(false)} />}
+      {showDetailsPopup && <BusinessDetailsPopup isOpen={showDetailsPopup} onClose={() => setShowDetailsPopup(false)} business={selectedBusiness} />}
     </div>
-  )
+  );
 }
