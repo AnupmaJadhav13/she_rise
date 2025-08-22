@@ -1,15 +1,19 @@
-import React from 'react'
-import Home from './Sections/Home'
-import Navbar from './Components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./Sections/Home"
+import BusinessConnect from "./Sections/BusinessConnect"
+import MentorConnect from "./Sections/MentorConnect"
+import CommunityForum from "./Sections/CommunityForum"
 
 function App() {
-
   return (
-    <>
-    <div className="">    
-     <Home/>
-    </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/business-connect" element={<BusinessConnect />} />
+        <Route path="/mentor-connect" element={<MentorConnect />} />
+        <Route path="/community-forum" element={<CommunityForum />} />
+      </Routes>
+    </Router>
   )
 }
 

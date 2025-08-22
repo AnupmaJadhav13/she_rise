@@ -2,27 +2,27 @@ import Navbar from '../Components/Navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">    
-     <Navbar/>
-     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-foreground mb-6">Welcome to SheRise</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                Your comprehensive platform for mentorship, business connections, and community engagement. Connect, learn,
+          <h1 className="text-5xl font-bold text-foreground mb-6">Welcome to SheRise</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Your comprehensive platform for mentorship, business connections, and community engagement. Connect, learn,
             and grow with professionals from around the world.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className='bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transistion-colors font-semibold'>
-                Get Started
-                </button>
-                <button className='border border-border px-8 py-3 rounded-lg hover:bg-accent transistion-colors font-semibold'>
-                Learn More      
-                </button>
-            </div>
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg hover:bg-primary/90 transistion-colors font-semibold">
+              Get Started
+            </button>
+            <button className="border border-border px-8 py-3 rounded-lg hover:bg-accent transistion-colors font-semibold">
+              Learn More
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-             <a href="/mentor-connect" className="group">
+          <a href="/mentor-connect" className="group">
             <div className="p-8 bg-card rounded-lg border border-border hover:shadow-lg transition-all duration-300 group-hover:border-primary/50">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-primary font-bold text-xl">M</span>

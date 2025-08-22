@@ -3,3 +3,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Added CSS custom properties for design tokens */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --accent: #f1f5f9;
+}
+
+.bg-background {
+  background-color: var(--background);
+}
+.text-foreground {
+  color: var(--foreground);
+}
+.bg-card {
+  background-color: var(--card);
+}
+.text-card-foreground {
+  color: var(--card-foreground);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.text-primary {
+  color: var(--primary);
+}
+.text-primary-foreground {
+  color: var(--primary-foreground);
+}
+.bg-muted {
+  background-color: var(--muted);
+}
+.text-muted-foreground {
+  color: var(--muted-foreground);
+}
+.border-border {
+  border-color: var(--border);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
