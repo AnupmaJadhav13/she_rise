@@ -3,10 +3,13 @@ import Home from "./Sections/Home"
 import BusinessConnect from "./Sections/BusinessConnect"
 import MentorConnect from "./Sections/MentorConnect"
 import CommunityForum from "./Sections/CommunityForum"
+import Navbar from "./Components/Navbar";
+
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/business-connect" element={<BusinessConnect />} />
