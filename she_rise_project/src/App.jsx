@@ -4,7 +4,7 @@ import BusinessConnect from "./Sections/BusinessConnect"
 import MentorConnect from "./Sections/MentorConnect"
 import CommunityForum from "./Sections/CommunityForum"
 import Navbar from "./Components/Navbar";
-
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/mentor-connect" element={<MentorConnect />} />
         <Route path="/community-forum" element={<CommunityForum />} />
       </Routes>
+      <Footer />
     </Router>
   )
 }
