@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-300">
       {/* Newsletter Section */}
-      <div className="bg-blue-600 py-10">
+      <div className="bg-blue-400 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Stay Connected with Our Community</h3>
