@@ -5,6 +5,7 @@ import MentorConnect from "./Sections/MentorConnect"
 import CommunityForum from "./Sections/CommunityForum"
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Courses from "./Sections/Courses";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/business-connect" element={<BusinessConnect />} />
         <Route path="/mentor-connect" element={<MentorConnect />} />
         <Route path="/community-forum" element={<CommunityForum />} />
+        <Route path="/courses" element={<Courses />} />
       </Routes>
       <Footer />
     </Router>

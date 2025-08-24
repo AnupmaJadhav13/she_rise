@@ -7,8 +7,7 @@ export default function CommunityForum() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-6">CommunityForum</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Engage in meaningful discussions with like-minded professionals and share knowledge with the community.
-          </p>
+Explore our all cousers           </p>
         </div>
       </main>
     </div>

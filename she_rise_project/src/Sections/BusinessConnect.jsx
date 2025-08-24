@@ -8,9 +8,37 @@ export default function BusinessConnect() {
   const [showConnectPopup, setShowConnectPopup] = useState(false);
   const [showDetailsPopup, setShowDetailsPopup] = useState(false);
   const [selectedBusiness, setSelectedBusiness] = useState(null);
+  const [search, setSearch] = useState("")
 
 
   const businesses = [
+    {
+      name: "TechFlow Solutions",
+      description: "Innovative software solutions for modern businesses",
+      products: ["/modern-tech-startup-office.png"],
+      website: "https://techflow.com",
+      owner: "John Doe",
+      location: "Pune, India",
+      tag: "Technology",
+    },
+    {
+      name: "Artisan Coffee Co.",
+      description: "Premium coffee and cozy workspace for professionals",
+      products: ["/artisan-coffee-shop.png"],
+      website: "https://artisancoffee.com",
+      owner: "Jane Smith",
+      location: "Mumbai, India",
+      tag: "Food & Beverage",
+    },
+    {
+      name: "FitLife Wellness",
+      description: "Complete fitness and wellness solutions for healthy living",
+      products: ["/modern-gym-equipment.png"],
+      website: "https://fitlifewellness.com",
+      owner: "Mike Johnson",
+      location: "Bangalore, India",
+      tag: "Healthcare",
+    },
     {
       name: "TechFlow Solutions",
       description: "Innovative software solutions for modern businesses",
@@ -42,7 +70,7 @@ export default function BusinessConnect() {
 
   return (
     
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-indigo-200">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-6">BusinessConnect</h1>
@@ -72,7 +100,7 @@ export default function BusinessConnect() {
           {businesses.map((biz, index) => (
             <div
               key={index}
-              className="bg-white border rounded-lg p-6 shadow-sm cursor-pointer"
+              className="bg-white border rounded-lg p-6 shadow-sm cursor-pointer transform transition duration-300 hover:scale-105 hover:shadow-2xl"
               onClick={() => {
                 setSelectedBusiness(biz);
                 setShowDetailsPopup(true);

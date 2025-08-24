@@ -15,14 +15,17 @@ export default function Navbar() {
             <Link to="/" className="text-gray-600 hover:text-gray-900">
               Home
             </Link>
+             <Link to="/courses" className="text-gray-600 hover:text-gray-900">
+              Courses
+            </Link>
             <Link to="/mentor-connect" className="text-gray-600 hover:text-gray-900">
-              MentorConnect
+              Mentor Counselling 
             </Link>
             <Link to="/business-connect" className="text-gray-600 hover:text-gray-900">
-              BusinessConnect
+              Grow Ur Business
             </Link>
             <Link to="/community-forum" className="text-gray-600 hover:text-gray-900">
-              CommunityForum
+              Community Forum
             </Link>
           </div>
         </div>

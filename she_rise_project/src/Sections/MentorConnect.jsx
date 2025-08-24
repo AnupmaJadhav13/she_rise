@@ -40,7 +40,7 @@ const MentorConnect = () => {
   )
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-indigo-200">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-foreground mb-6">MentorConnect</h1>
@@ -50,15 +50,31 @@ const MentorConnect = () => {
         </div>
 
         {/* Search Bar */}
-        <div className="mb-8 flex justify-center">
-          <input
-            type="text"
-            placeholder="Search mentors by name or domain..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="w-full sm:w-1/2 px-4 py-2 border border-gray-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-        </div>
+<div className="mb-8 flex justify-center">
+  <input
+    type="text"
+    placeholder="Search mentors by name or domain..."
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    className="
+      w-full sm:w-1/2
+      px-6 py-3
+      border border-blue-300
+      rounded-3xl
+      shadow-lg
+      bg-white/80
+      placeholder-gray-500
+      text-gray-800
+      font-medium
+      focus:outline-none
+      focus:ring-4 focus:ring-blue-400/50
+      focus:border-blue-500
+      transition-all duration-300
+      backdrop-blur-sm
+    "
+  />
+</div>
+
 
         {/* Mentor Cards Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
